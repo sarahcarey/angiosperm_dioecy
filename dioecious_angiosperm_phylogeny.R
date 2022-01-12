@@ -1,5 +1,5 @@
-#### R script for the manuscript by S.B.Carey, L.Smith, and A.Harkess 
-#### titled "The contributions of Dr. Nettie Stevens to the field of sex chromosome biology"
+#### R script for the manuscript by S.B.Carey, L.Akozbek, and A.Harkess 
+#### titled "The contributions of Nettie Stevens to the field of sex chromosome biology"
 
 #### Specifically, this script will generate the heatmap for dioecious angiosperms (Fig. 3)
 ### Script by S.B. Carey
@@ -35,17 +35,15 @@ tree_plot <- ggtree(angio_tree, branch.length = "none",
                     size=1, color="gray75") +
   geom_tiplab(size=3.5, color="black") +
   xlim(NA,60) +
-  theme_tree("white")
+  theme_tree("white") 
 
-
-heatmap <- gheatmap(tree_plot, log2(counts), offset=7, width=0.25,
+heatmap <- gheatmap(tree_plot, log(counts), offset=7, width=0.25,
                     colnames_angle = 0, colnames_position="top",
                     colnames_offset_y=0.5) +
-  scale_fill_viridis_c(option="A", name="Log2 no. species") + 
-  theme(legend.position = c(0.1, 0.8))
+  scale_fill_viridis_c(option="A", name="Log no. species") + 
+  theme(legend.position = c(0.1, 0.8), plot.margin=unit(c(0,-4,0,-0.5),"in"))
 
 heatmap
 
-ggsave("angiosperm_dioecy.png", heatmap, units="in", width=10, height=10, dpi=300,
-       device="png")
-
+ggsave("Fig3.pdf", heatmap, units="in", width=8, height=10, dpi=300,
+       device="pdf")
