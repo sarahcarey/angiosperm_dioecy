@@ -1,4 +1,4 @@
-### R script and necessary data to make Figure 3 in S.B.Carey, L.Smith and A.Harkess "The contributions of Dr. Nettie Stevens to the field of sex chromosome biology"
+### R script and necessary data to make Figure 3 in S.B.Carey, L.Akozbek and A.Harkess "The contributions of Nettie Stevens to the field of sex chromosome biology"
 <br>
 <br>
 Description of files:<br>
